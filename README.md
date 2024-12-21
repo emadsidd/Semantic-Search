@@ -1,8 +1,9 @@
 # Semantic-Search
-This research focuses on the development of a high-efficiency semantic search system designed for an online retail catalog with millions of items. Using natural language processing and vector similarity search, the system enables users to input natural language queries and receive relevant product results from a large dataset of 1.3 million items. We use Sentence Transformer for text embedding and Facebook AI Similarity Search (FAISS) for efficient indexing and search. The system is designed to handle product filters and generate highly relevant results while keeping computational costs low and focusing on scalability for large datasets.
+This research focuses on the development of a high-efficiency semantic search system designed for an online retail catalog with millions of items. Using natural language processing and vector similarity search, the system enables users to input natural language queries and receive relevant product results from a large dataset of 1.3 million items involving Cell Phones and Cell Phone Accessories. We use Sentence Transformer for text embedding and Facebook AI Similarity Search (FAISS) for efficient indexing and search. The system is designed to handle product filters using Google FLAN-T5-small and generate highly relevant results while keeping computational costs low and focusing on scalability for large datasets.
 
 This is a work-in-progress research paper.
 
+# Results
 ![Alt text](./Sample_Evaluation_Results/Table_1.png)
 
 **Summary of Results for Table 1:**
