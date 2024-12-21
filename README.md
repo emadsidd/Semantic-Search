@@ -12,7 +12,7 @@ The Sentence Transformer was fine-tuned on 6,503,847 query-product pairs to enco
 The FLAN-T5-small model was fine-tuned on 55,496 query-label pairs to extract structured filters (price, ratings, review counts, subcategory) from user queries. This ensures dynamic result refinement.
 
 ## Results
-To evaluate performance, Precision@K and Recall@K were measured, and the results were compared against a keyword-based Elasticsearch implementation. Products were ranked using Elasticsearch's BM25 algorithm, which scored them based on relevance to the queries. For semantic search, cosine similarity was used to match query and product embeddings. ELasticsearch served as a robust baseline for keyword-based retrieval, allowing us to assess the improvements offered by our semantic search system.
+To evaluate performance, Precision@K and Recall@K were measured, and the results were compared against a keyword-based Elasticsearch implementation. Products were ranked using Elasticsearch's BM25 algorithm, which scored them based on relevance to the queries. For semantic search, cosine similarity was used to match query and product embeddings. Elasticsearch served as a robust baseline for keyword-based retrieval, allowing us to assess the improvements offered by our semantic search system.
 
 
 ![Alt text](./Sample_Evaluation_Results/Table_1.png)
