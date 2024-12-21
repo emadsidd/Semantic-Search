@@ -1,0 +1,4 @@
+Flask==2.3.2
+Elasticsearch==8.9.0
+psycopg2==2.9.7
+bootstrap-flask==1.6.0
