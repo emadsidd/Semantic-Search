@@ -43,12 +43,11 @@ The semantic system shows exceptional performance in retrieving relevant results
 
 **Filter Extraction Accuracy:**
 - The FLAN-T5-small model performs well for most queries, accurately extracting filters like price ranges, ratings, and subcategories.
-- Errors occur in edge cases, such as misinterpreting constraints (e.g., maximum vs. minimum ratings), due to limited representation of these cases in the fine-tuning dataset. Targeted dataset curation could address these issues.
+- Errors occur in edge cases, such as misinterpreting constraints (e.g., maximum vs. minimum ratings), due to limited representation of these cases in the fine-tuning dataset. Targeted dataset curation can address these issues.
 
 **Execution Time Performance:**
-- The system achieves execution times between 0.90 to 1.27 seconds, even on a CPU (M1 MacBook Air with 8GB RAM), showcasing its efficiency.
-- The filter extraction step is the most time-consuming, followed by FAISS search. Deployment on GPU-enabled infrastructure could further improve performance, making the system scalable for larger datasets and real-time use cases.
-
+- The system achieves execution times between 0.90 to 1.27 seconds, even on a CPU (M1 MacBook Air with 8GB RAM), showcasing its efficiency. Significant performance gains can be expected when deployed on GPU-enabled infrastructure.
+- The filter extraction step is the most time-consuming, followed by FAISS search. Optimization could improve execution time.
 
 
 ## How to Replicate the Sample Evaluation Results
