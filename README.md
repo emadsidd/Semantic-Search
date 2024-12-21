@@ -1,5 +1,12 @@
 # Semantic-Search
 
+
+![Alt text](./Sample_Evaluation_Results/Table_1)
+![Alt text](./Sample_Evaluation_Results/Table_2)
+![Alt text](./Sample_Evaluation_Results/Table_3.1)
+![Alt text](./Sample_Evaluation_Results/Table_3.2)
+
+
 # How to Replicate the Sample Evaluation Results
 
 ## 1. Clone the Repository
