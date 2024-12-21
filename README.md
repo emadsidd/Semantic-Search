@@ -78,7 +78,7 @@ pip install -r requirements.txt
 To replicate the sample results, execute the `evaluate_sample_dataset.py` script:
 
 # How to Run the Semantic Search System:
-Follow Steps 1 to 3 and then:
+After Steps 1 to 3 from above:
 
 ## 4. Download and Merge the Models Folder
 https://1drv.ms/u/s!AqfmYowASmFYntJEvZx9qH0Kd7wwSA?e=OMVqtx
