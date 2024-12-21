@@ -3,7 +3,7 @@ This research focuses on the development of a high-efficiency semantic search sy
 
 This is a work-in-progress research paper.
 
-# Fine-Tuning Models
+## Fine-Tuning Models
 
 ## Sentence Transformer (all-MiniLM-L6-v2)
 The Sentence Transformer was fine-tuned on 6,503,847 query-product pairs to encode user queries and product metadata into a shared semantic space. This enables precise retrieval of relevant products using FAISS indexing.
@@ -11,7 +11,10 @@ The Sentence Transformer was fine-tuned on 6,503,847 query-product pairs to enco
 ## FLAN-T5-small
 The FLAN-T5-small model was fine-tuned on 55,496 query-label pairs to extract structured filters (price, ratings, review counts, subcategory) from user queries. This ensures dynamic result refinement.
 
-# Results
+## Results
+To evaluate performance, Precision@K and Recall@K were measured, and the results were compared against a keyword-based Elasticsearch implementation. Products were ranked using Elasticsearch's BM25 algorithm, which scored them based on relevance to the queries. For semantic search, cosine similarity was used to match query and product embeddings. ELasticsearch served as a robust baseline for keyword-based retrieval, allowing us to assess the improvements offered by our semantic search system.
+
+
 ![Alt text](./Sample_Evaluation_Results/Table_1.png)
 
 **Summary of Results for Table 1:**
@@ -175,3 +178,12 @@ Replace `<username>` with your PostgreSQL username, `<database_name>` with the n
 - If you use the default `postgres` username, set the password to `postgres` and database name to `mydb`, and the default port is `5432`, you will not need to make any changes to the Flask script.
 - If your setup differs, you will need to update the connection details in the Flask app accordingly.
 - In future updates, we will provide a Docker container based solution that will simplify the whole process of running the system on a local computer.
+
+
+## Contribution
+Emad Ahmed Siddiqui and Venkatesh Terikuti contributed to the development of the semantic search system, while Lakshmi Neharika Anchula and Harshit Mehta focused on implementing and evaluating Elasticsearch, as well as curating sample dataset for testing precision and recall.
+
+## Acknowledgements
+We deeply appreciate the ongoing support of our mentor, Dr. Xuan Lu, whose guidance and access to computational resources were instrumental in making this work possible. 
+
+
