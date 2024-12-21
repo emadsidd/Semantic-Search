@@ -3,6 +3,14 @@ This research focuses on the development of a high-efficiency semantic search sy
 
 This is a work-in-progress research paper.
 
+# Fine-Tuning Models
+
+## Sentence Transformer (all-MiniLM-L6-v2)
+The Sentence Transformer was fine-tuned on 6,503,847 query-product pairs to encode user queries and product metadata into a shared semantic space. This enables precise retrieval of relevant products using FAISS indexing.
+
+## FLAN-T5-small
+The FLAN-T5-small model was fine-tuned on 55,496 query-label pairs to extract structured filters (price, ratings, review counts, subcategory) from user queries. This ensures dynamic result refinement.
+
 # Results
 ![Alt text](./Sample_Evaluation_Results/Table_1.png)
 
@@ -26,9 +34,7 @@ The complete semantic system (Sentence Transformer + FAISS + FLAN-T5-small) sign
 
 The semantic system shows exceptional performance in retrieving relevant results for semantic and natural language queries, maintaining parity even for keyword-heavy queries. However, limitations were observed for specific numeric constraints (e.g., 120Hz refresh rate) and fine-grained distinctions (e.g., "Samsung S22 Ultra with 256GB storage"), highlighting areas for future improvement.
 
-![Alt text](./Sample_Evaluation_Results/Table_3.1.png)
-
-![Alt text](./Sample_Evaluation_Results/Table_3.2.png)
+![Alt text](./Sample_Evaluation_Results/Table_3.png)
 
 **Summary of Results for Table 3:**
 
@@ -42,9 +48,9 @@ The semantic system shows exceptional performance in retrieving relevant results
 
 
 
-# How to Replicate the Sample Evaluation Results
+## How to Replicate the Sample Evaluation Results
 
-## 1. Clone the Repository
+### 1. Clone the Repository
 First, clone the repository to your local machine:
 
 ```bash
@@ -52,7 +58,7 @@ git clone /https://github.com/emadsidd/Semantic-Search.git
 cd Semantic-Search
 ```
 
-## 2. Create a Virtual Environment
+### 2. Create a Virtual Environment
 Set up a Python virtual environment to isolate dependencies:
 
 ```bash
@@ -67,29 +73,105 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 Install the required Python libraries using the `requirements.txt` file:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 4. Run the Evaluation Script
+### 4. Run the Evaluation Script
 To replicate the sample results, execute the `evaluate_sample_dataset.py` script:
-
-# How to Run the Semantic Search System:
-After Steps 1 to 3 from above:
-
-## 4. Download and Merge the Models Folder
-https://1drv.ms/u/s!AqfmYowASmFYntJEvZx9qH0Kd7wwSA?e=OMVqtx
-Download the zip file containing the model files from the provided link. Extract the `models` folder and merge it with the `models` folder in the cloned repository.
-
-## 5. Run the Semantic Search Model
-To run the semantic search model, execute the `semantic_search.py` script:
-
-```bash
-python semantic_search.py
 
 ```bash
 python evaluate_sample_dataset.py
 ```
+
+## How to Run the Semantic Search System:
+After Steps 1 to 3 from above:
+
+### 4. Download and Merge the Models Folder
+Download the zip file containing the fine-tuned models and FAISS index files from the link: https://1drv.ms/u/s!AqfmYowASmFYntJEvZx9qH0Kd7wwSA?e=OMVqtx
+
+Extract the `models` folder and merge it with the `models` folder in the cloned repository.
+
+### 5. Run the Semantic Search Model
+To run the semantic search model, execute the `semantic_search.py` script:
+
+```bash
+python semantic_search.py
+```
+
+## Setting Up the Database Using the Dump File
+
+To set up the database using the PostgreSQL dump file, follow these steps:
+
+### For macOS/Linux:
+
+### Install PostgreSQL:
+If PostgreSQL is not already installed on your system, download and install it from the official PostgreSQL website: https://www.postgresql.org/download/
+
+### 2. Start PostgreSQL Service:
+Make sure the PostgreSQL service is running:
+
+```bash
+# macOS/Linux:
+sudo service postgresql start
+```
+
+### 3. Download the Dump File:
+Obtain the database dump file from the this link: https://1drv.ms/f/s!AqfmYowASmFYns1DYjtGqYUl9OOoQw?e=ZvHqxw
+
+
+### 4. Create a New Database:
+Log in to your PostgreSQL server and create a new database to import the dump file:
+
+```bash
+psql -U <username>
+CREATE DATABASE <database_name>;
+\q
+```
+Replace `<username>` with your PostgreSQL username and `<database_name>` with the desired name of your database.
+
+### 5. Import the Dump File:
+Use the following command to import the dump file into the newly created database:
+
+```bash
+psql -U <username> -d <database_name> -f <path_to_dump_file>
+```
+Replace `<username>` with your PostgreSQL username, `<database_name>` with the name of the database you just created, and `<path_to_dump_file>` with the path to the downloaded dump file.
+
+
+### For Windows:
+
+### 1. Install PostgreSQL:
+Download and install PostgreSQL from the official website: https://www.postgresql.org/download/
+
+### 2. Start PostgreSQL Service:
+Ensure the PostgreSQL service is running. You can check and start the service using the Services application (`services.msc`).
+
+### 3. Download the Dump File:
+Obtain the database dump file from the link provided.
+
+### 4. Create a New Database:
+Open the SQL Shell (psql) and create a new database:
+
+```bash
+CREATE DATABASE <database_name>;
+\q
+```
+Replace `<database_name>` with the desired name of your database.
+
+### 5. Import the Dump File:
+Use the following command in the Command Prompt or PowerShell to import the dump file:
+
+```bash
+psql -U <username> -d <database_name> -f <path_to_dump_file>
+```
+Replace `<username>` with your PostgreSQL username, `<database_name>` with the name of the database you just created, and `<path_to_dump_file>` with the path to the downloaded dump file.
+
+### Notes on Configuration:
+
+- If you use the default `postgres` username, set the password to `postgres` and database name to `mydb`, and the default port is `5432`, you will not need to make any changes to the Flask script.
+- If your setup differs, you will need to update the connection details in the Flask app accordingly.
+- In future updates, we will provide a Docker container based solution that will simplify the whole process of running the system on a local computer.
