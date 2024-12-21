@@ -93,7 +93,7 @@ python evaluate_sample_dataset.py
 After steps 1 to 3 from above:
 
 ### 4. Download and Merge the Models Folder
-Download the zip file containing the fine-tuned models and FAISS index files from the link: https://1drv.ms/u/s!AqfmYowASmFYntJEvZx9qH0Kd7wwSA?e=OMVqtx
+Download the zip file containing the fine-tuned models and FAISS index from the link: https://1drv.ms/u/s!AqfmYowASmFYntJEvZx9qH0Kd7wwSA?e=OMVqtx
 
 Extract the `models` folder and merge it with the `models` folder in the cloned repository.
 
