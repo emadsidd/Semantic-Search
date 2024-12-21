@@ -42,7 +42,7 @@ The semantic system shows exceptional performance in retrieving relevant results
 **Summary of Results for Table 3:**
 
 **Filter Extraction Accuracy:**
-- The FLAN-T5-small model performs well for general queries, accurately extracting filters like price ranges, ratings, and subcategories.
+- The FLAN-T5-small model performs well for most queries, accurately extracting filters like price ranges, ratings, and subcategories.
 - Errors occur in edge cases, such as misinterpreting constraints (e.g., maximum vs. minimum ratings), due to limited representation of these cases in the fine-tuning dataset. Targeted dataset curation could address these issues.
 
 **Execution Time Performance:**
