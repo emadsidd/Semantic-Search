@@ -47,7 +47,7 @@ The semantic system shows exceptional performance in retrieving relevant results
 
 **Execution Time Performance:**
 - The system achieves execution times between 0.90 to 1.27 seconds, even on a CPU (M1 MacBook Air with 8GB RAM), showcasing its efficiency. Significant performance gains can be expected when deployed on GPU-enabled infrastructure.
-- The filter extraction step is the most time-consuming, followed by FAISS search. Optimization could improve execution time.
+- The filter extraction step is the most time-consuming, followed by FAISS search. Optimization could improve execution times for these steps.
 
 
 ## How to Replicate the Sample Evaluation Results
@@ -90,7 +90,7 @@ python evaluate_sample_dataset.py
 ```
 
 ## How to Run the Semantic Search System:
-After Steps 1 to 3 from above:
+After steps 1 to 3 from above:
 
 ### 4. Download and Merge the Models Folder
 Download the zip file containing the fine-tuned models and FAISS index files from the link: https://1drv.ms/u/s!AqfmYowASmFYntJEvZx9qH0Kd7wwSA?e=OMVqtx
