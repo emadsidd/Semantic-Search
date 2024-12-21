@@ -1,10 +1,10 @@
 # Semantic-Search
 
 
-![Alt text](./Sample_Evaluation_Results/Table_1)
-![Alt text](./Sample_Evaluation_Results/Table_2)
-![Alt text](./Sample_Evaluation_Results/Table_3.1)
-![Alt text](./Sample_Evaluation_Results/Table_3.2)
+![Alt text](./Sample_Evaluation_Results/Table_1.png)
+![Alt text](./Sample_Evaluation_Results/Table_2.png)
+![Alt text](./Sample_Evaluation_Results/Table_3.1.png)
+![Alt text](./Sample_Evaluation_Results/Table_3.2.png)
 
 
 # How to Replicate the Sample Evaluation Results
