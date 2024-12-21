@@ -77,6 +77,19 @@ pip install -r requirements.txt
 ## 4. Run the Evaluation Script
 To replicate the sample results, execute the `evaluate_sample_dataset.py` script:
 
+# How to Run the Semantic Search System:
+Follow Steps 1 to 3 and then:
+
+## 4. Download and Merge the Models Folder
+https://1drv.ms/u/s!AqfmYowASmFYntJEvZx9qH0Kd7wwSA?e=OMVqtx
+Download the zip file containing the model files from the provided link. Extract the `models` folder and merge it with the `models` folder in the cloned repository.
+
+## 5. Run the Semantic Search Model
+To run the semantic search model, execute the `semantic_search.py` script:
+
+```bash
+python semantic_search.py
+
 ```bash
 python evaluate_sample_dataset.py
 ```
