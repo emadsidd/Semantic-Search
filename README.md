@@ -139,7 +139,7 @@ Replace `<username>` with your PostgreSQL username and `<database_name>` with th
 Use the following command to import the dump file into the newly created database:
 
 ```bash
-psql -U <username> -d <database_name> -f <path_to_dump_file>
+pg_restore -U <username> -d <database_name> <path_to_dump_file>
 ```
 Replace `<username>` with your PostgreSQL username, `<database_name>` with the name of the database you just created, and `<path_to_dump_file>` with the path to the downloaded dump file.
 
@@ -155,8 +155,12 @@ Ensure the PostgreSQL service is running. You can check and start the service us
 ### 3. Download the Dump File:
 Obtain the database dump file from the link provided.
 
-### 4. Create a New Database:
-Open the SQL Shell (psql) and create a new database:
+### 4. Add PostgreSQL bin Directory to System's PATH (if required):
+If PostgreSQL tools are not recognized when running commands, you may need to add the PostgreSQL bin directory to your system's PATH environment variable.
+For detailed instructions on how to update the PATH environment variable, follow this guide: https://sqlbackupandftp.com/blog/setting-windows-path-for-postgres-tools/
+
+### 5. Create a New Database:
+Open the PostgreSQL interactive terminal by running the psql command and set up a new database:
 
 ```bash
 CREATE DATABASE <database_name>;
@@ -164,11 +168,11 @@ CREATE DATABASE <database_name>;
 ```
 Replace `<database_name>` with the desired name of your database.
 
-### 5. Import the Dump File:
+### 6. Import the Dump File:
 Use the following command in the Command Prompt or PowerShell to import the dump file:
 
 ```bash
-psql -U <username> -d <database_name> -f <path_to_dump_file>
+pg_restore -U <username> -d <database_name> "<path_to_dump_file>"
 ```
 Replace `<username>` with your PostgreSQL username, `<database_name>` with the name of the database you just created, and `<path_to_dump_file>` with the path to the downloaded dump file.
 
@@ -183,6 +187,6 @@ Replace `<username>` with your PostgreSQL username, `<database_name>` with the n
 Emad Ahmed Siddiqui and Venkatesh Terikuti contributed to the development of the semantic search system, while Lakshmi Neharika Anchula and Harshit Mehta focused on implementing and evaluating Elasticsearch, as well as curating sample dataset for testing precision and recall.
 
 ## Acknowledgements
-We deeply appreciate the ongoing support of our mentor, Dr. Xuan Lu, whose guidance and access to computational resources were instrumental in making this work possible. 
+We deeply appreciate the ongoing support of our mentor, Dr. Xuan Lu, whose guidance and access to HPC were instrumental in making this work possible. 
 
 
